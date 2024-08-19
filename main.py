@@ -1,7 +1,7 @@
 from agents import AINewsAgent
 
 def main():
-    api_key = "e0bd2bbdb5ba96f17964ce559e9d1325362075b4670fae503dacdb2339952bb8" 
+    api_key = "9e92b6fe16a1820edfaaa5253e33692509d6f5721cac4cebecf82329dd06a29f" 
     ai_news_agent = AINewsAgent(api_key)
     
     hot_ai_news = ai_news_agent.get_hot_ai_news()

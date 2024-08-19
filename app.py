@@ -1,14 +1,21 @@
 import streamlit as st
 from agents import AINewsAgent
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the API key from the environment variable
+api_key = os.getenv("API_KEY")
 
 # Initialize your agent with the API key
-api_key = "e0bd2bbdb5ba96f17964ce559e9d1325362075b4670fae503dacdb2339952bb8"
 ai_news_agent = AINewsAgent(api_key)
 
 # CSS for background color
 st.markdown("""
     <style>
-    body {
+    .stApp {
         background-color: yellow;
     }
     .block-container {
@@ -22,7 +29,7 @@ def get_hot_ai_news():
 
 # Streamlit UI
 st.title("Spicy AI News")
-st.write("Get the hottest AI news on the fly! ")
+st.write("Get the hottest AI news on the fly!")
 
 if st.button("Fetch AI News"):
     with st.spinner("Fetching news..."):
